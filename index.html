@@ -6,16 +6,22 @@
   <title>Join Voidara Business</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+    /* Techy light background pattern */
     body {
       font-family: 'Montserrat', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f0f4f8;
-      color: #222;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      min-height: 100vh;
+      background: linear-gradient(135deg, #eef6fb 0%, #d9eefa 100%);
+      background-image:
+        radial-gradient(circle at 10% 20%, rgba(100, 102, 255, 0.1) 15%, transparent 40%),
+        radial-gradient(circle at 85% 90%, rgba(100, 102, 255, 0.1) 20%, transparent 50%);
+      color: #222;
     }
+
     header {
       background-color: #0077cc;
       color: white;
@@ -42,18 +48,31 @@
 
     main {
       flex: 1;
-      padding: 2rem 1rem;
+      padding: 2rem 1rem 4rem;
       max-width: 1000px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
       gap: 3rem;
     }
-    .videos {
+
+    .video-section {
       display: flex;
-      gap: 2rem;
-      justify-content: center;
-      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 12px;
+      padding: 1.5rem 1rem 2rem;
+      box-shadow: 0 8px 20px rgba(100, 102, 255, 0.2);
+    }
+    .video-section h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #4b4b7d;
+      text-align: center;
+      max-width: 480px;
+      margin: 0 auto 0.5rem;
     }
     iframe {
       border-radius: 10px;
@@ -62,12 +81,16 @@
       max-width: 480px;
       height: 270px;
     }
+
     .actions {
       display: flex;
       gap: 2rem;
       justify-content: center;
       flex-wrap: wrap;
+      margin: 0 auto;
+      max-width: 520px;
     }
+
     .btn {
       background-color: #6422B8;
       color: white;
@@ -82,12 +105,15 @@
       display: flex;
       align-items: center;
       gap: 0.6rem;
-      box-shadow: 0 5px 15px rgba(0, 119, 204, 0.4);
+      box-shadow: 0 5px 15px rgba(100, 34, 184, 0.4);
+      width: 100%;
+      max-width: 250px;
+      justify-content: center;
     }
     .btn:hover,
     .btn:focus {
       background-color: #00C4CC;
-      box-shadow: 0 8px 20px rgba(0, 95, 163, 0.6);
+      box-shadow: 0 8px 20px rgba(0, 196, 204, 0.6);
       outline: none;
     }
     .btn svg {
@@ -95,6 +121,7 @@
       height: 22px;
       fill: white;
     }
+
     footer {
       background-color: #FF738E;
       text-align: center;
@@ -108,13 +135,19 @@
       header h1 {
         font-size: 2rem;
       }
+      .video-section {
+        padding: 1rem 1rem 1.5rem;
+      }
       iframe {
         max-width: 100%;
         height: 200px;
       }
+      .actions {
+        max-width: 100%;
+      }
       .btn {
+        max-width: 100%;
         width: 100%;
-        justify-content: center;
       }
     }
   </style>
@@ -123,41 +156,54 @@
 
 <header>
   <h1>Welcome to Voidara Business Builder Program</h1>
-  <p>If you are ready to get started on your path to participating in the Ai Revolution, click the video links below</p>
+  <p>If you are ready to get started on your path to participating in the AI Revolution, click the video links below</p>
 </header>
 
 <main>
-  <section class="videos" aria-label="Introduction Videos">
+
+  <section class="video-section" aria-label="Experience the Future of AI">
+    <h2>Experience the Future of Ai - Get your own Voidara Agent 100% Free</h2>
     <iframe 
       src="https://www.youtube.com/embed/fpXTm2NF6XA" 
       title="Experience the Future of Ai - Get Your Own Voidara Agent 100% Free." 
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
       allowfullscreen
       loading="lazy"></iframe>
+    <div class="actions">
+      <a class="btn" href="https://partner.voidara.ai/join/XXPZwH42R1Jh" target="_blank" rel="noopener" aria-label="Use Ai for Free">
+        <!-- Icon: Clipboard Check -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M9 16.17l-3.5-3.5-1.41 1.41L9 19 20.5 7.5l-1.41-1.41z"/>
+        </svg>
+        Use Ai for Free
+      </a>
+    </div>
+  </section>
 
+  <section class="video-section" aria-label="Profit from AI">
+    <h2>Don't Just Use Ai - Profit from It. Build your Financial Future with Voidara</h2>
     <iframe 
       src="https://www.youtube.com/embed/SsGV-W1D6ZQ" 
       title="Don't Just Use Ai - Profit from It. Build Your Financial Future with Voidara" 
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
       allowfullscreen
       loading="lazy"></iframe>
+    <div class="actions">
+      <a class="btn" href="https://partner.voidara.ai/register?ref=your-ai-assistant" target="_blank" rel="noopener" aria-label="Use Ai and Earn From It">
+        <!-- Icon: User Plus -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M15 12c2.21 0 4-1.79 4-4s-1.79-4 -4-4 -4 1.79-4 4 1.79 4 4 4zm-3 1c-2.67 0-8 1.34-8 4v3h11v-3c0-1.1.9-2 2-2h1v-3h-3zM19 11v2h2v2h-2v2h-2v-2h-2v-2h2v-2z"/>
+        </svg>
+        Use Ai and Earn From It
+      </a>
+    </div>
   </section>
 
-  <section class="actions">
-    <a class="btn" href="https://partner.voidara.ai/join/XXPZwH42R1Jh" target="_blank" rel="noopener" aria-label="Use Ai Agent for Free">
-      <!-- Icon: Clipboard Check -->
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path d="M9 16.17l-3.5-3.5-1.41 1.41L9 19 20.5 7.5l-1.41-1.41z"/>
-      </svg>
-      Fill Out Info Form
-    </a>
-
-    <a class="btn" href="https://partner.voidara.ai/register?ref=your-ai-assistant" target="_blank" rel="noopener" aria-label="Use Ai and Earn from It">
-      <!-- Icon: User Plus -->
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path d="M15 12c2.21 0 4-1.79 4-4s-1.79-4 -4-4 -4 1.79-4 4 1.79 4 4 4zm-3 1c-2.67 0-8 1.34-8 4v3h11v-3c0-1.1.9-2 2-2h1v-3h-3zM19 11v2h2v2h-2v2h-2v-2h-2v-2h2v-2z"/>
-      </svg>
-      Join Our Business
-    </a>
-  </section>
 </main>
+
+<footer>
+  &copy; 2025 Voidara Business. All rights reserved.
+</footer>
+
+</body>
+</html>
