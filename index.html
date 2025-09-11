@@ -1,209 +1,676 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Join Voidara Business</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Voidara AI Agents Landing Page</title>
 
-    /* Techy light background pattern */
-    body {
-      font-family: 'Montserrat', sans-serif;
-      margin: 0;
-      padding: 0;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      background: linear-gradient(135deg, #eef6fb 0%, #d9eefa 100%);
-      background-image:
-        radial-gradient(circle at 10% 20%, rgba(100, 102, 255, 0.1) 15%, transparent 40%),
-        radial-gradient(circle at 85% 90%, rgba(100, 102, 255, 0.1) 20%, transparent 50%);
-      color: #222;
-    }
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Serif+Display&display=swap" rel="stylesheet" />
 
-    header {
-      background-color: #0077cc;
-      color: white;
-      padding: 3rem 1rem;
-      text-align: center;
-      animation: fadeInDown 1s ease forwards;
-    }
-    header h1 {
-      margin: 0 0 0.2rem;
-      font-weight: 700;
-      font-size: 2.8rem;
-      letter-spacing: 1.2px;
-    }
-    header p {
-      margin: 0;
-      font-size: 1.2rem;
-      opacity: 0.9;
-    }
+<!-- Font Awesome CDN for social media icons -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
 
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+<style>
+  :root {
+    --mint-aqua: #a3e7e0;
+    --light-gray: #c7c8ca;
+    --sky-blue: #85c6e5;
+    --ocean-teal: #63c7c0;
+    --soft-seafoam: #d4edf2;
 
-    main {
-      flex: 1;
-      padding: 2rem 1rem 4rem;
-      max-width: 1000px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 3rem;
-    }
+    --font-heading: 'Noto Serif Display', serif;
+    --font-body: 'Montserrat', sans-serif;
+  }
 
-    .video-section {
-      display: flex;
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-body);
+    background: #fff;
+    color: #222;
+    line-height: 1.5;
+  }
+
+  a {
+    color: var(--ocean-teal);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--light-gray);
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  header .logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--ocean-teal);
+  }
+
+  nav {
+    flex-grow: 1;
+    margin-left: 2rem;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    padding: 0;
+    margin: 0;
+  }
+
+  nav ul li {
+    font-weight: 600;
+  }
+
+  nav ul li a {
+    font-weight: 600;
+    font-family: var(--font-body);
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .social-icons a {
+    font-size: 1.25rem;
+    color: var(--ocean-teal);
+    transition: color 0.3s ease;
+  }
+  .social-icons a:hover {
+    color: var(--sky-blue);
+  }
+
+  main {
+    padding: 2rem 0 4rem;
+  }
+
+  .hero {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-left {
+    flex: 1 1 300px;
+    max-width: 450px;
+  }
+
+  .portrait-placeholder {
+    width: 100%;
+    max-width: 320px;
+    height: 400px;
+    border-radius: 12px;
+    background: var(--soft-seafoam);
+    box-shadow: 0 4px 8px rgb(159 216 222 / 0.4);
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-body);
+    color: var(--ocean-teal);
+    font-size: 1.25rem;
+  }
+
+  .bio {
+    font-family: var(--font-body);
+    color: #2f2f2f;
+  }
+
+  .bio h2 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin: 0 0 0.25rem;
+    color: var(--ocean-teal);
+  }
+
+  .bio h3 {
+    font-weight: 600;
+    color: var(--sky-blue);
+    margin: 0 0 1rem;
+    font-size: 1.15rem;
+  }
+
+  .bio p {
+    margin-bottom: 1rem;
+  }
+
+  .lead-capture-form {
+    background: white;
+    padding: 1.5rem 1.75rem;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgb(163 231 224 / 0.5);
+    margin-bottom: 2rem;
+    max-width: 450px;
+  }
+
+  .lead-capture-form h3 {
+    font-family: var(--font-heading);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--ocean-teal);
+    font-weight: 700;
+    font-size: 1.3rem;
+  }
+
+  .lead-capture-form label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+    color: var(--ocean-teal);
+  }
+
+  .lead-capture-form input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 2px solid var(--soft-seafoam);
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-body);
+  }
+
+  .lead-capture-form input:focus {
+    border-color: var(--ocean-teal);
+    outline: none;
+  }
+
+  .lead-capture-form button {
+    background: linear-gradient(135deg, var(--ocean-teal), var(--sky-blue));
+    border: none;
+    border-radius: 25px;
+    padding: 0.6rem 1.8rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    transition: background 0.3s ease;
+    width: 100%;
+  }
+
+  .lead-capture-form button:hover {
+    background: linear-gradient(135deg, var(--sky-blue), var(--ocean-teal));
+  }
+
+  .hero-right {
+    flex: 1 1 350px;
+    max-width: 560px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgb(99 199 192 / 0.4);
+    min-height: 345px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--soft-seafoam);
+    color: var(--ocean-teal);
+    font-family: var(--font-body);
+  }
+
+  .hero-right iframe {
+    width: 100%;
+    height: 315px;
+    border: none;
+  }
+
+  .headline {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--ocean-teal);
+  }
+
+  .subheadline {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: var(--sky-blue);
+    margin-bottom: 2rem;
+  }
+
+  .pre-qualification {
+    background: linear-gradient(135deg, var(--soft-seafoam), var(--mint-aqua));
+    padding: 2rem 1rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgb(163 231 224 / 0.5);
+    max-width: 700px;
+    margin: 0 auto 4rem;
+  }
+
+  .pre-qualification h3 {
+    font-family: var(--font-heading);
+    color: var(--ocean-teal);
+    margin-bottom: 0.5rem;
+  }
+
+  .pre-qualification p {
+    color: var(--ocean-teal);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+  }
+
+  .pre-qualification form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .pre-qualification label {
+    font-weight: 600;
+    color: var(--ocean-teal);
+  }
+
+  .pre-qualification textarea,
+  .pre-qualification select,
+  .pre-qualification input[type="radio"] {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    border-radius: 8px;
+    padding: 0.5rem;
+    border: 2px solid var(--soft-seafoam);
+    width: 100%;
+  }
+
+  .pre-qualification textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+
+  .radio-group {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .radio-group label {
+    font-weight: 600;
+  }
+
+  .pre-qualification button {
+    margin-top: 1rem;
+    background: linear-gradient(135deg, var(--ocean-teal), var(--sky-blue));
+    border: none;
+    border-radius: 25px;
+    padding: 0.6rem 1.8rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    transition: background 0.3s ease;
+    align-self: flex-start;
+    cursor: pointer;
+    width: max-content;
+  }
+
+  .pre-qualification button:hover {
+    background: linear-gradient(135deg, var(--sky-blue), var(--ocean-teal));
+  }
+
+  .cta-section {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+  }
+
+  .cta-option {
+    flex: 1 1 280px;
+    max-width: 320px;
+    background: white;
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgb(163 231 224 / 0.5);
+    text-align: center;
+  }
+
+  .cta-option h4 {
+    font-family: var(--font-heading);
+    color: var(--ocean-teal);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+  }
+
+  .cta-option button {
+    background: linear-gradient(135deg, var(--ocean-teal), var(--sky-blue));
+    border: none;
+    border-radius: 25px;
+    padding: 0.8rem 2.2rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;
+  }
+
+  .cta-option button:hover {
+    background: linear-gradient(135deg, var(--sky-blue), var(--ocean-teal));
+  }
+
+  footer {
+    background: linear-gradient(135deg, var(--mint-aqua), var(--soft-seafoam));
+    padding: 2rem 1rem;
+    text-align: center;
+    font-family: var(--font-body);
+    color: var(--ocean-teal);
+    box-shadow: inset 0 2px 6px rgb(99 199 192 / 0.4);
+  }
+
+  footer .footer-icons {
+    margin-bottom: 1rem;
+  }
+
+  footer .footer-icons a {
+    font-size: 1.4rem;
+    margin: 0 0.75rem;
+    color: var(--ocean-teal);
+    transition: color 0.3s ease;
+  }
+  footer .footer-icons a:hover {
+    color: var(--sky-blue);
+  }
+
+  footer .contact-info {
+    font-weight: 600;
+  }
+
+  @media (max-width: 900px) {
+    .hero {
       flex-direction: column;
       align-items: center;
-      gap: 1rem;
-      background: rgba(255, 255, 255, 0.85);
-      border-radius: 12px;
-      padding: 1.5rem 1rem 2rem;
-      box-shadow: 0 8px 20px rgba(100, 102, 255, 0.2);
-    }
-    .video-section h2 {
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: #4b4b7d;
       text-align: center;
-      max-width: 480px;
-      margin: 0 auto 0.5rem;
-    }
-    iframe {
-      border-radius: 10px;
-      box-shadow: 0 6px 15px rgba(0, 119, 204, 0.3);
-      width: 100%;
-      max-width: 480px;
-      height: 270px;
     }
 
-    .actions {
-      display: flex;
-      gap: 2rem;
+    .hero-left,
+    .hero-right {
+      max-width: 100%;
+      flex: none;
+    }
+
+    .lead-capture-form {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    nav ul {
+      gap: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    header {
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    nav {
+      order: 3;
+      width: 100%;
+      margin-left: 0;
+    }
+
+    nav ul {
       justify-content: center;
       flex-wrap: wrap;
-      margin: 0 auto;
-      max-width: 520px;
     }
 
-    .btn {
-      background-color: #6422B8;
-      color: white;
-      padding: 1rem 2.5rem;
-      font-size: 1.3rem;
-      font-weight: 600;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      box-shadow: 0 5px 15px rgba(100, 34, 184, 0.4);
+    .social-icons {
+      order: 2;
       width: 100%;
-      max-width: 250px;
       justify-content: center;
     }
-    .btn:hover,
-    .btn:focus {
-      background-color: #00C4CC;
-      box-shadow: 0 8px 20px rgba(0, 196, 204, 0.6);
-      outline: none;
-    }
-    .btn svg {
-      width: 22px;
-      height: 22px;
-      fill: white;
+
+    .hero-left {
+      max-width: 100%;
     }
 
-    footer {
-      background-color: #FF738E;
-      text-align: center;
-      padding: 1rem 0;
-      font-size: 0.85rem;
-      color: #555;
-      margin-top: auto;
+    .lead-capture-form button,
+    .pre-qualification button,
+    .cta-option button {
+      width: 100%;
     }
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      .video-section {
-        padding: 1rem 1rem 1.5rem;
-      }
-      iframe {
-        max-width: 100%;
-        height: 200px;
-      }
-      .actions {
-        max-width: 100%;
-      }
-      .btn {
-        max-width: 100%;
-        width: 100%;
-      }
+    .cta-section {
+      flex-direction: column;
+      gap: 1.5rem;
     }
-  </style>
+  }
+</style>
 </head>
 <body>
 
-<header>
-  <h1>Welcome to Voidara Business Builder Program</h1>
-  <p>If you are ready to get started on your path to participating in the AI Revolution, click the video links below</p>
+<header class="container">
+  <div class="logo" aria-label="Voidara Logo">Voidara</div>
+  <nav aria-label="Primary Navigation">
+    <ul>
+      <li><a href="#home" tabindex="0">Home</a></li>
+      <li><a href="#about" tabindex="0">About</a></li>
+      <li><a href="#join" tabindex="0">Join</a></li>
+      <li><a href="#contact" tabindex="0">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="social-icons" aria-label="Social Media Links">
+    <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook" tabindex="0"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" tabindex="0"><i class="fab fa-instagram"></i></a>
+    <a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok" tabindex="0"><i class="fab fa-tiktok"></i></a>
+    <a href="https://whatsapp.com" target="_blank" rel="noopener" aria-label="WhatsApp" tabindex="0"><i class="fab fa-whatsapp"></i></a>
+  </div>
 </header>
 
-<main>
+<main class="container" id="home">
 
-  <section class="video-section" aria-label="Experience the Future of AI">
-    <h2>Experience the Future of Ai - Get your own Voidara Agent 100% Free</h2>
-    <iframe 
-      src="https://www.youtube.com/embed/fpXTm2NF6XA" 
-      title="Experience the Future of Ai - Get Your Own Voidara Agent 100% Free." 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-      allowfullscreen
-      loading="lazy"></iframe>
-    <div class="actions">
-      <a class="btn" href="https://partner.voidara.ai/join/XXPZwH42R1Jh" target="_blank" rel="noopener" aria-label="Use Ai for Free">
-        <!-- Icon: Clipboard Check -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <path d="M9 16.17l-3.5-3.5-1.41 1.41L9 19 20.5 7.5l-1.41-1.41z"/>
-        </svg>
-        Use Ai for Free
-      </a>
+  <section class="hero" aria-label="Hero Section">
+    <div class="hero-left">
+      <div class="portrait-placeholder" aria-label="Portrait placeholder for personal photo">
+        Personal Photo
+      </div>
+
+      <div class="bio">
+        <h2 id="bio-name">Tricia Toykam</h2>
+        <h3 id="bio-title">Marketing, Leadership & Innovation Guide</h3>
+        <p>
+          I’ve spent over a decade helping businesses and individuals grow through smart marketing, leadership, and innovation. What I’m most passionate about is showing everyday people how to tap into new opportunities, without the overwhelm.
+        </p>
+        <p>
+          I know what it’s like to want more freedom and financial stability, and that’s why I chose to partner with Voidara. My role is to guide you step-by-step, whether you simply want to use our AI Agent for free or build a business that creates real income.
+        </p>
+        <p>
+          If you’re ready to simplify your life, increase your earnings, and step into the future with AI, you’re in the right place.
+        </p>
+      </div>
+
+      <form id="leadCaptureForm" class="lead-capture-form" aria-label="Lead capture form">
+        <h3>Get Your Free AI Agent</h3>
+        <label for="nameInput">Name</label>
+        <input type="text" id="nameInput" name="name" required placeholder="Your full name" aria-required="true" />
+
+        <label for="emailInput">Email</label>
+        <input type="email" id="emailInput" name="email" required placeholder="Your email address" aria-required="true" />
+
+        <label for="whatsappInput">WhatsApp Number</label>
+        <input
+          type="tel"
+          id="whatsappInput"
+          name="whatsapp"
+          pattern="^\\+?\\d{7,15}$"
+          placeholder="+1234567890"
+          required
+          aria-required="true"
+          aria-describedby="whatsappHelp"
+        />
+        <small id="whatsappHelp">Enter country code with number, e.g. +1234567890</small>
+
+        <button type="submit" aria-label="Submit lead capture form">Submit</button>
+      </form>
+    </div>
+
+    <div class="hero-right" aria-label="Introductory video player">
+      <h1 class="headline">Discover the Power of Voidara AI Agents</h1>
+      <p class="subheadline">Get your free AI Agent or explore how to earn from the AI revolution.</p>
+
+      <div id="videoContainer" style="display:none;">
+        <iframe
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          title="Voidara AI Agents Intro Video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
     </div>
   </section>
 
-  <section class="video-section" aria-label="Profit from AI">
-    <h2>Don't Just Use Ai - Profit from It. Build your Financial Future with Voidara</h2>
-    <iframe 
-      src="https://www.youtube.com/embed/SsGV-W1D6ZQ" 
-      title="Don't Just Use Ai - Profit from It. Build Your Financial Future with Voidara" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-      allowfullscreen
-      loading="lazy"></iframe>
-    <div class="actions">
-      <a class="btn" href="https://partner.voidara.ai/register?ref=your-ai-assistant" target="_blank" rel="noopener" aria-label="Use Ai and Earn From It">
-        <!-- Icon: User Plus -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <path d="M15 12c2.21 0 4-1.79 4-4s-1.79-4 -4-4 -4 1.79-4 4 1.79 4 4 4zm-3 1c-2.67 0-8 1.34-8 4v3h11v-3c0-1.1.9-2 2-2h1v-3h-3zM19 11v2h2v2h-2v2h-2v-2h-2v-2h2v-2z"/>
-        </svg>
-        Use Ai and Earn From It
-      </a>
+  <section class="pre-qualification" aria-label="Business partner pre-qualification section" id="join">
+    <h3>Interested in becoming a business partner? Answer a few questions to see if you qualify.</h3>
+
+    <form id="partnerQualifyForm" aria-label="Business partner pre-qualification form">
+      <label for="interestInput">Why are you interested in AI?</label>
+      <textarea id="interestInput" name="interest" required placeholder="Tell us why AI interests you..." aria-required="true"></textarea>
+
+      <label for="hoursInput">How many hours per week can you dedicate?</label>
+      <select id="hoursInput" name="hours" required aria-required="true">
+        <option value="" disabled selected>Select hours</option>
+        <option value="5-10">5–10</option>
+        <option value="10-20">10–20</option>
+        <option value="20+">20+</option>
+      </select>
+
+      <fieldset>
+        <legend>Are you looking for active income, passive income, or both?</legend>
+        <div class="radio-group">
+          <label><input type="radio" name="incomeType" value="active" required /> Active income</label>
+          <label><input type="radio" name="incomeType" value="passive" /> Passive income</label>
+          <label><input type="radio" name="incomeType" value="both" /> Both</label>
+        </div>
+      </fieldset>
+
+      <button type="submit" aria-label="Submit partner qualification form">Submit</button>
+    </form>
+  </section>
+
+  <section class="cta-section" aria-label="Call to action section">
+    <div class="cta-option">
+      <h4>Customer Option</h4>
+      <button onclick="window.location.href='https://yourdomain.com/customer-signup'" aria-label="Get my free AI agent">
+        Get My Free AI Agent
+      </button>
+    </div>
+
+    <div class="cta-option">
+      <h4>Partner Option</h4>
+      <button onclick="window.location.href='https://partner.voidara.ai/register?ref=your-ai-assistant'" aria-label="Qualify and join as business partner">
+        Qualify &amp; Join as a Business Partner
+      </button>
     </div>
   </section>
 
 </main>
 
 <footer>
-  &copy; 2025 Voidara Business. All rights reserved.
+  <div class="footer-icons" aria-label="Footer social media links">
+    <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+    <a href="https://whatsapp.com" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  </div>
+  <div class="contact-info" aria-label="Contact information">
+    Contact us: info@voidara.ai | +1 234 567 8900
+  </div>
 </footer>
+
+<script>
+  const leadForm = document.getElementById('leadCaptureForm');
+  const videoContainer = document.getElementById('videoContainer');
+
+  leadForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name = leadForm.name.value.trim();
+    const email = leadForm.email.value.trim();
+    const whatsapp = leadForm.whatsapp.value.trim();
+
+    const whatsappPattern = /^\\+?\\d{7,15}$/;
+    if (!whatsappPattern.test(whatsapp)) {
+      alert('Please enter a valid WhatsApp number with country code (e.g. +1234567890).');
+      return;
+    }
+
+    // Store data locally only (no backend)
+    localStorage.setItem('voidaraLeadData', JSON.stringify({ name, email, whatsapp }));
+
+    // Hide form, reveal video
+    leadForm.style.display = 'none';
+    videoContainer.style.display = 'block';
+  });
+
+  const partnerForm = document.getElementById('partnerQualifyForm');
+  partnerForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const interest = partnerForm.interest.value.trim();
+    const hours = partnerForm.hours.value;
+    const incomeTypeElements = partnerForm.elements['incomeType'];
+    let incomeType = "";
+    for (const elem of incomeTypeElements) {
+      if (elem.checked) {
+        incomeType = elem.value;
+        break;
+      }
+    }
+
+    if (!interest) {
+      alert('Please tell us why you are interested in AI.');
+      return;
+    }
+    if (!hours) {
+      alert('Please select how many hours you can dedicate.');
+      return;
+    }
+    if (!incomeType) {
+      alert('Please select your income preference.');
+      return;
+    }
+
+    // Store locally only
+    localStorage.setItem('voidaraPartnerQualify', JSON.stringify({ interest, hours, incomeType }));
+
+    // Redirect to updated video link
+    window.location.href = "https://youtu.be/LDDkg0FLIr0?si=IAyCwgpNaczmcP4R";
+  });
+</script>
 
 </body>
 </html>
